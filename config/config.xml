@@ -1,0 +1,26 @@
+<QuickLearnConfig>
+	<RESTService>
+		<EndpointAddress>localhost</EndpointAddress>
+		<EndpointPort>5000</EndpointPort>
+	</RESTService>
+	<DB>
+		<EndpointAddress>localhost</EndpointAddress>
+		<EndpointPort>3306</EndpointPort>
+		<Username>mysql_username</Username>
+		<Password>mysql_password</Password>
+		<Name>quicklearn</Name>
+	</DB>
+	<S3>
+		<EndpointAddress>localhost</EndpointAddress>
+		<EndpointPort>8080</EndpointPort>
+		<ApplicationName>littleS3</ApplicationName>
+		<BucketName>quicklearnsaas</BucketName>
+	</S3>
+	<Notification>
+		<Server>smtp.gmail.com</Server>
+		<Port>587</Port>
+		<Address>notification_email</Address>
+		<Password>gmail_password</Password>
+		<Name>QuickLearn SaaS</Name>
+	</Notification>
+</QuickLearnConfig>
