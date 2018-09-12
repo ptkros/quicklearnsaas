@@ -1,4 +1,17 @@
-# quicklearnsaas deployment guide:
+The aim of this project is to study, to design and to develop a Software as a Service (SaaS) for a cloud environment that is able to serve, concurrently and efficiently, requests over the web for the generation and testing of ranking models for information retrieval systems. The project is based on [Quickrank](https://github.com/hpclab/quickrank) and [SB Admin 2](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2). Detailed information can be found [here](https://drive.google.com/file/d/1oWt94Xi_4i0oIiUAy3pmiBkf-9CnuuDy/view).
+
+# Source code guide:
+
+The main implementation code can be found the following files/folders:
+    * [site/main.py](/quicklearnsaas/site/main.py)
+    * [site/python](/quicklearnsaas/site/python)
+    * [site/static/pages](/quicklearnsaas/site/static/pages)
+    * [site/static/js_custom](/quicklearnsaas/site/static/js_custom)
+    * [quickrank/src/intermediary.cc](/quicklearnsaas/quickrank/src/intermediary.cc)
+    * [quickrank/src/quicklearn.cc](/quicklearnsaas/quickrank/src/quicklearn.cc)
+    * [quickrank/src/DBConnector.cc](/quicklearnsaas/quickrank/src/DBConnector.cc)
+    
+# Deployment guide:
 
 All of these commands are intended to be executed from this directory.
 On Ubuntu Linux:
