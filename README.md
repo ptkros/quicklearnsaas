@@ -92,5 +92,5 @@ The notification service has been tested with Gmail only. Anyway, it should work
 
 ### Contributors:
 
-* "Luigi Caiazza" <lcaiazza88@gmail.com>
-* "Patrik Rosini" <patrik.rosini@gmail.com>
+"Luigi Caiazza" <lcaiazza88@gmail.com>
+
