@@ -3,7 +3,7 @@ The aim of this project is to study, to design and to develop a Software as a Se
 # Source code guide:
 
 The main implementation code can be found the following files/folders:
-    * [site/main.py](/quicklearnsaas/site/main.py)
+   * [site/main.py](/quicklearnsaas/site/main.py)
     * [site/python](/quicklearnsaas/site/python)
     * [site/static/pages](/quicklearnsaas/site/static/pages)
     * [site/static/js_custom](/quicklearnsaas/site/static/js_custom)
