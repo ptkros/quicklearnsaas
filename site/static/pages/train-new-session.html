@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>QuickLearn SaaS Train New session</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="../bower_components/metisMenu/dist/metisMenu.min.css"
+	rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../bower_components/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+
+<style>
+td {
+	border: 1px #ddd solid; 
+	padding: 5px; 
+	cursor: pointer;
+}
+.selected {
+    background-color: #337ab7;
+    color: #fff;
+}
+</style>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	
+	<div id="wrapper">
+	
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="quicklearn.html">QuickLearn SaaS</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="quicklearn.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Training<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="train-sessions.html">Train Sessions</a>
+                                </li>
+                                <li>
+                                    <a href="train-new-session.html">New Train Session</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-check-square-o fa-fw"></i> Testing<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="test-sessions.html">Test Sessions</a>
+                                </li>
+                                <li>
+                                    <a href="test-new-session.html">New Test Session</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="fast-scoring.html"><i class="fa fa-code fa-fw"></i> Fast Scoring</a>
+                        </li>
+                        <li>
+                            <a href="preferences.html"><i class="fa fa-wrench fa-fw"></i> Preferences</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+		
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- <h1 class="page-header">New session</h1> -->
+					<h1 class="page-header">New Training Session</h1>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row" >
+				<div class="col-lg-12">
+					<form id="form" role="form" method="POST" enctype="multipart/form-data">
+						<div id="taskPanel" class="panel panel-default" >
+							<!-- <div class="panel-heading">Learning Task 1</div> -->
+							<div class="panel-heading">Training Task 1</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-4" id="trainVali_div1">	
+										<div class="form-group">
+											<label>Learning to Rank Algorithm</label> 
+											<select class="form-control rankingAlg training1 resetTask1 resetTrain1" id="rankAlg1" name="algorithm_string1">
+												<option value="" selected style="display:none">LtR algorithm</option>
+												<option value="Mart">Mart</option>
+												<option value="LambdaMart">LambdaMart</option>
+												<option value="ObvMart">Oblivious Mart</option>
+												<option value="ObvLambdaMart">Oblivious LambdaMart</option>
+												<option value="CoordAsc">Coordinate Ascent</option>
+											</select>
+										</div>
+										 <div class="form-group">
+											<label>Train metric</label> <select class="form-control training1 resetTask1 resetTrain1" id="trainMetric1" name="train_metric_string1">
+												<option value="" selected style="display:none">Train metric</option>
+												<option value="NDCG">NDCG</option>
+												<option value="DCG">DCG</option>
+												<option value="TNDCG">TNDCG</option>
+												<option value="MAP">MAP</option>
+											</select>
+										</div>
+										<div class="form-group">
+												<label>Train metric cutoff</label> <input
+												class="form-control training1 resetTask1 resetTrain1" placeholder="Cutoff (default: 10)" id="trainCutoff1" name="train_cutoff1">
+										</div>
+										<div class="form-group">
+												<label>Partial file save frequency</label> <input
+												class="form-control training1 resetTask1 resetTrain1" placeholder="Frequency (default: 100)" id="parSave1" name="partial_save1">
+										</div>
+										<div class="form-group" id="localFileTrainDiv1">
+											<label>Training file</label> <input class="training1 resetTask1 resetTrain1 localTrainFile" id="training_file1" type="file" name="training_filename1">
+											<input class="workaround resetTask1 resetTrain1 loadTrainFile" id="load_train_checkbox1" type="checkbox" disabled> Upload training file on S3</input>
+											<input class="resetTask1 resetTrain1" id="load_trainFile_remote1" name="load_trainfile1" type="hidden">
+										</div>
+										
+										<!-- Retrieve training file list from S3 -->
+										
+										<div class="form-group" id="remoteFileTrainDiv1">
+											<label>Training remote file</label> 
+											<button class="btn btn-default btn-xs training1 resetTask1 resetTrain1 remoteTrainFile" data-toggle="modal" data-target="#myModalTrain1" id="training_file_remote1" type="button">Choose File</button><span class="spanRemFile" id="spanRemTrainFile1"> No file chosen</span>
+											<input class="resetTask1 resetTrain1" id="selected_trainFile_remote1" name="training_file_remote1" type="hidden">
+										</div>
+										<!-- Modal -->
+			                            <div class="modal fade" id="myModalTrain1" tabindex="-1" role="dialog" aria-labelledby="myModalLabelTrain1" aria-hidden="true">
+			                                <div class="modal-dialog">
+			                                    <div class="modal-content">
+			                                        <div class="modal-header">
+			                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                                            <h4 class="modal-title" id="myModalLabelTrain1">Remote Training Files List</h4>
+			                                        </div>
+			                                        <div class="modal-body">
+			                                        	<table id="train_remoteFileTable1" style="width:100%">   
+														</table>
+			                                        </div>
+			                                        <div class="modal-footer">
+			                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			                                            <button type="button" class="btn btn-default removeTrainSel" data-dismiss="modal" id="remoteTrainUnsel1">Cancel file</button>
+			                                            <button type="button" class="btn btn-primary remoteTrainSelection" data-dismiss="modal" id="remoteTrainSel1">Select file</button>
+			                                        </div>
+			                                    </div>
+			                                    <!-- /.modal-content -->
+			                                </div>
+			                                <!-- /.modal-dialog -->
+			                            </div>
+			                            <!-- /.modal -->
+																									
+										<!-- End Retrieve training file list from S3 -->
+										
+										<div id="vali_div1">
+											<div class="form-group">
+												<div class="checkbox">
+													<label> <input class="validation_checkbox training1 resetTask1 resetTrain1 resetVali1" id="validation_checkbox1" type="checkbox">Validation
+													</label>
+													<input class="resetTask1 resetTrain1 resetVali1" id="vali_chkbox1" name="vali_chkboxVal1" type="hidden">
+												</div>
+											</div>
+											<div class="form-group">
+												<label>Validation file</label> <input class="validation1 workaround resetTask1 resetTrain1 resetVali1 localValiFile" id="validation_file1" type="file" name="validation_filename1" disabled>
+												<input class="workaround resetTask1 resetTrain1 resetVali1 loadValiFile" id="load_vali_checkbox1" type="checkbox" disabled> Upload validation file on S3</input>
+												<input class="resetTask1 resetTrain1 resetVali1" id="load_valiFile_remote1" name="load_valifile1" type="hidden">
+											</div>
+											
+											<!-- Retrieve validation file list from S3 -->
+										
+											<div class="form-group">
+												<label>Validation remote file</label> 
+												<button class="btn btn-default btn-xs validation1 workaround resetTask1 resetTrain1 resetVali1 remoteValiFile" data-toggle="modal" data-target="#myModalVali1" id="validation_file_remote1" type="button" disabled>Choose File</button><span class="spanRemFile" id="spanRemValiFile1"> No file chosen</span>
+												<input class="resetTask1 resetTrain1 resetVali1" id="selected_valiFile_remote1" name="validation_file_remote1" type="hidden">
+											</div>
+											<!-- Modal -->
+				                            <div class="modal fade" id="myModalVali1" tabindex="-1" role="dialog" aria-labelledby="myModalLabelVali1" aria-hidden="true">
+				                                <div class="modal-dialog">
+				                                    <div class="modal-content">
+				                                        <div class="modal-header">
+				                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				                                            <h4 class="modal-title" id="myModalLabelVali1">Remote Validation Files List</h4>
+				                                        </div>
+				                                        <div class="modal-body">
+				                                        	<table id="vali_remoteFileTable1" style="width:100%">   
+															</table>
+				                                        </div>
+				                                        <div class="modal-footer">
+				                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				                                            <button type="button" class="btn btn-default removeValiSel" data-dismiss="modal" id="remoteValiUnsel1">Cancel file</button>
+				                                            <button type="button" class="btn btn-primary remoteValiSelection" data-dismiss="modal" id="remoteValiSel1">Select file</button>
+				                                        </div>
+				                                    </div>
+				                                    <!-- /.modal-content -->
+				                                </div>
+				                                <!-- /.modal-dialog -->
+				                            </div>
+				                            <!-- /.modal -->
+																										
+											<!-- End Retrieve validation file list from S3 -->
+										
+										</div>
+										<div class="form-group">
+												<label>Features file</label> <input class="training1 resetTask1 resetTrain1 localFeatFile" id="features_file1" type="file" name="features_filename1">
+												<input class="workaround resetTask1 resetTrain1 loadFeatFile" id="load_feat_checkbox1" type="checkbox" disabled> Upload features file on S3</input>
+												<input class="resetTask1 resetTrain1" id="load_featFile_remote1" name="load_featfile1" type="hidden">
+										</div>
+										
+										<!-- Retrieve features file list from S3 -->
+										
+										<div class="form-group">
+											<label>Features remote file</label> 
+											<button class="btn btn-default btn-xs training1 resetTask1 resetTrain1 remoteFeatFile" data-toggle="modal" data-target="#myModalFeat1" id="features_file_remote1" type="button">Choose File</button><span class="spanRemFile" id="spanRemFeatFile1"> No file chosen</span>
+											<input class="resetTask1 resetTrain1" id="selected_featFile_remote1" name="features_file_remote1" type="hidden">
+										</div>
+										<!-- Modal -->
+			                            <div class="modal fade" id="myModalFeat1" tabindex="-1" role="dialog" aria-labelledby="myModalLabelFeat1" aria-hidden="true">
+			                                <div class="modal-dialog">
+			                                    <div class="modal-content">
+			                                        <div class="modal-header">
+			                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                                            <h4 class="modal-title" id="myModalLabelFeat1">Remote Feautures Files List</h4>
+			                                        </div>
+			                                        <div class="modal-body">
+			                                        	<table id="feat_remoteFileTable1" style="width:100%">   
+														</table>
+			                                        </div>
+			                                        <div class="modal-footer">
+			                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			                                            <button type="button" class="btn btn-default removeFeatSel" data-dismiss="modal" id="remoteFeatUnsel1">Cancel file</button>
+			                                            <button type="button" class="btn btn-primary remoteFeatSelection" data-dismiss="modal" id="remoteFeatSel1">Select file</button>
+			                                        </div>
+			                                    </div>
+			                                    <!-- /.modal-content -->
+			                                </div>
+			                                <!-- /.modal-dialog -->
+			                            </div>
+			                            <!-- /.modal -->
+																									
+										<!-- End Retrieve features file list from S3 -->
+									
+									</div>
+									<div class="col-lg-4" id="forest1">
+										<h4>Forest Settings</h4>
+										<div class="form-group">
+												<label>Number of trees</label> <input class="form-control training1 resetTask1 resetTrain1"
+												placeholder="# trees (default: 1000)" id="numbTrees1" name="ntrees1">
+										</div>
+										<div class="form-group">
+												<label>Shrinkage</label> <input class="form-control training1 resetTask1 resetTrain1"
+												placeholder="Shrinkage (default: 0.100000001)" id="shrink1" name="shrinkage1">
+										</div>
+										<div class="form-group">
+											<label>Number of thresholds</label> 
+											<input class="form-control training1 resetTask1 resetTrain1" placeholder="# thresholds (default: 0)" id="numberThHold1" name="nthresholds1">
+										</div>
+										<div class="form-group">
+												<label>Minimum number of leaf support</label> <input
+												class="form-control training1 resetTask1 resetTrain1"
+												placeholder="Min. leaf support (default: 1)" id="minLeafSup1" name="minleafsupport1">
+										</div>
+										<div class="form-group">
+												<label>Num. rounds with no boost in validation before
+												ending</label> <input class="form-control training1 resetTask1 resetTrain1"
+												placeholder="# rounds (default: 100, if 0 disabled)" id="esrNumber1" name="esr1">
+										</div>
+										<div class="form-group" id="numberTrLeaves_div1">
+												<label>Number of leaves</label> <input class="form-control training1 resetTask1 resetTrain1"
+												placeholder="# leaves (default: 10, applied only to Mart/LambdaMart)" id="numberTrLeaves1" name="ntreeleaves1">
+										</div>
+										<div class="form-group treeDepth_div" id="treeDepth_div1">
+												<label>Tree depth</label> <input class="form-control training1 resetTask1 resetTrain1"
+												placeholder="Depth (default: 3, applied only to Oblivious Mart/LambdaMart)" id="treeDepth1" name="treedepth1">
+										</div>
+									</div>
+									<div class="col-lg-4 coordAsc" id="coordAsc1">
+										<h4>Coordinate Ascent Settings</h4>
+										<div class="form-group">
+												<label>Number of samples in search window</label> <input
+												class="form-control training1 resetTask1 resetTrain1" placeholder="# samples (default: 21)" id="numberPoints1" name="num_points1">
+										</div>
+										<div class="form-group">
+												<label>Search window size</label> <input class="form-control training1 resetTask1 resetTrain1"
+												placeholder="Window size (default: 10)" id="winSize1" name="window_size1">
+										</div>
+										<div class="form-group">
+											<label>Window reduction factor</label> 
+											<input class="form-control training1 resetTask1 resetTrain1" placeholder="Factor (default: 0.949999988)" id="redFactor1" name="reduction_factor1">
+										</div>
+										<div class="form-group">
+												<label>Number of maximum iterations</label> <input
+												class="form-control training1 resetTask1 resetTrain1"
+												placeholder="# max iterations (default: 100)" id="numberMaxIte1" name="max_iterations1">
+										</div>
+										<div class="form-group">
+												<label>Number of fails on validation before ending</label> <input
+												class="form-control training1 resetTask1 resetTrain1"
+												placeholder="# max failed validations (default: 20)" id="numberMaxFail1" name="max_failed_vali1">
+										</div>
+									</div>	
+									<div class="col-lg-4" id="test_div1">
+										<div class="form-group">
+											<div class="checkbox">
+												<label> <input class="testing_checkbox resetTask1 resetTest1" id="testing_checkbox1" type="checkbox">Testing</label>
+												<input class="resetTask1 resetTest1" id="test_chkbox1" name="test_chkboxVal1" type="hidden">		
+											</div>
+										</div>	
+										<div class="form-group">
+											<label>Test metric</label> <select class="form-control testing1 workaround resetTask1 resetTest1" id="testMetric1" name="test_metric_string1" disabled>
+												<option value="" selected style="display:none">Test metric</option>
+												<option value="NDCG">NDCG</option>
+												<option value="DCG">DCG</option>
+												<option value="TNDCG">TNDCG</option>
+												<option value="MAP">MAP</option>
+											</select>
+										</div>
+										<div class="form-group">
+										<label>Test metric cutoff</label>
+											<input class="form-control testing1 workaround resetTask1 resetTest1" placeholder="Cutoff (default: 10)" id="testCutoff1" name="test_cutoff1" disabled>
+										</div>
+										<div class="form-group">
+											<label>Testing file</label> 
+											<input class="testing1 workaround resetTask1 resetTest1 localTestFile" id="test_file1" type="file" name="test_filename1" disabled>
+											<input class="workaround resetTask1 resetTest1 loadTestFile" id="load_test_checkbox1" type="checkbox" disabled> Upload testing file on S3</input>
+											<input class="resetTask1 resetTest1" id="load_testFile_remote1" name="load_testfile1" type="hidden">
+										</div>
+										
+										<!-- Retrieve testing file list from S3 -->
+										
+										<div class="form-group">
+											<label>Testing remote file</label> 
+											<button class="btn btn-default btn-xs testing1 workaround resetTask1 resetTest1 remoteTestFile" data-toggle="modal" data-target="#myModalTest1" id="testing_file_remote1" type="button" disabled>Choose File</button><span class="spanRemFile" id="spanRemTestFile1"> No file chosen</span>
+											<input class="resetTask1 resetTest1" id="selected_testFile_remote1" name="testing_file_remote1" type="hidden">
+										</div>
+										<!-- Modal -->
+			                            <div class="modal fade" id="myModalTest1" tabindex="-1" role="dialog" aria-labelledby="myModalLabelTest1" aria-hidden="true">
+			                                <div class="modal-dialog">
+			                                    <div class="modal-content">
+			                                        <div class="modal-header">
+			                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                                            <h4 class="modal-title" id="myModalLabelTest1">Remote Testing Files List</h4>
+			                                        </div>
+			                                        <div class="modal-body">
+			                                        	<table id="test_remoteFileTable1" style="width:100%">   
+														</table>
+			                                        </div>
+			                                        <div class="modal-footer">
+			                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			                                            <button type="button" class="btn btn-default removeTestSel" data-dismiss="modal" id="remoteTestUnsel1">Cancel file</button>
+			                                            <button type="button" class="btn btn-primary remoteTestSelection" data-dismiss="modal" id="remoteTestSel1">Select file</button>
+			                                        </div>
+			                                    </div>
+			                                    <!-- /.modal-content -->
+			                                </div>
+			                                <!-- /.modal-dialog -->
+			                            </div>
+			                            <!-- /.modal -->
+																									
+										<!-- End Retrieve testing file list from S3 -->
+										
+									</div>		
+								</div>
+								<!-- /.row (nested) -->
+							</div>
+							<!-- /.panel-body -->
+							<div class="panel-footer">
+									<button type="button" class="btn btn-default resetting" id="reset1">Reset Task</button>
+                        	</div>
+						</div>
+						<!-- /.panel -->
+					</form>
+					<div style="margin-bottom: 18px">
+						<button type="button" class="btn btn-primary" id="addTask">Add Training Task</button>
+						<button type="button" class="btn btn-danger" id="submitTask">Submit Training Tasks</button>
+					</div>
+				</div>
+				<!-- /.col-lg-12 -->
+							
+			</div>	
+			<!-- /.row -->
+	</div>
+	<!-- /#page-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<!-- jQuery -->
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="../dist/js/sb-admin-2.js"></script>
+		
+	<script src="../js_custom/train-new-session.js"></script>
+
+</body>
+
+</html>
