@@ -2,12 +2,12 @@ The aim of this project is to study, to design and to develop a Software as a Se
 
 # Source code guide:
 
-The main implementation code can be found the following files/folders:
+The main implementation code can be found in the following files/folders:
    * [site/main.py](https://github.com/ptkros/quicklearnsaas/blob/master/site/main.py)
    * [site/python](https://github.com/ptkros/quicklearnsaas/tree/master/site/python)
    * [site/static/pages](https://github.com/ptkros/quicklearnsaas/tree/master/site/static/pages)
    * [site/static/js_custom](https://github.com/ptkros/quicklearnsaas/tree/master/site/static/js_custom)
-   * [quickrank/src/intermediary.cc](https://github.com/ptkros/quicklearnsaas/blob/master/quickrank/src/intermediary.ccc)
+   * [quickrank/src/intermediary.cc](https://github.com/ptkros/quicklearnsaas/blob/master/quickrank/src/intermediary.cc)
    * [quickrank/src/quicklearn.cc](https://github.com/ptkros/quicklearnsaas/blob/master/quickrank/src/quicklearn.cc)
    * [quickrank/src/DBConnector.cc](https://github.com/ptkros/quicklearnsaas/blob/master/quickrank/src/DBConnector.cc)
     
